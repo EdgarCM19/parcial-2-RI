@@ -1,0 +1,38 @@
+@import '../../styles/base';
+
+.radio-input {
+    @include flex-row-center;
+    @include color;
+    @include outer-shadow(4px, 7px);
+    justify-content: space-around;
+    border: none;
+    border-radius: 16px;
+    padding: 16px 8px;
+    margin: 8px;
+
+
+    & input[type="radio"]{
+        display: none;
+
+    }
+
+    & input[type="radio"]:checked + label {
+        @include inner-shadow(3px, 5px);
+    }
+    
+    & label {
+        font-size: 16px;
+        padding: 12px 12px;
+        border-radius: 16px;
+        margin: 8px;
+        transition: all .4s ease-in-out;
+        
+        & input[type="radio"]:checked {
+            @include inner-shadow(3px, 4px);
+        }
+    }
+
+
+}
+
+

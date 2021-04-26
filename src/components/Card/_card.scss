@@ -1,0 +1,36 @@
+@import '../../styles/base';
+
+
+.card {
+
+    &__wrapper {
+        width: 15em;
+        height: 15em; 
+        border-radius: 16px;
+        padding: .5em 1em;
+        @include flex-column-center;
+        justify-content: flex-start;
+        @include color;
+        @include outer-shadow(4px, 10px);
+    }
+
+    &__title {
+        width: 100%;
+        padding: 8px 4px;
+        font-size: 26px;
+        text-align: start;
+    }
+
+    &__separator {
+        width: 100%;
+        height: 3px;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    &__content {
+        width: 100%;
+        padding: 8px 4px;
+        font-size: 16px;
+    }
+
+}

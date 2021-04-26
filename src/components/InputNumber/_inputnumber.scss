@@ -1,0 +1,82 @@
+@import '../../styles/base';
+@import '../../styles/variables';
+
+.input-num{
+    position: relative;
+    @include flex-row-center;
+    padding: 4px 8px;
+    margin: 8px;
+}
+
+.increment,
+.decrement {
+    position: absolute;
+    @include flex-row-center;
+    justify-content: space-around;
+    @include color;
+    padding: 4px;
+    width: 48px;
+    height: 40px;
+    margin: 0;
+    z-index: 8;
+}
+
+input.input-field {
+    width: 40px;
+    height: 40px;
+    border: none;
+    @include color;
+    &:active,
+    &:focus {
+        outline: none;
+    }
+    margin: 0;
+    z-index: 10;
+    text-align: center;
+    font-size: 16px;
+    transition: all.3s ease-in-out;
+}
+
+.decrement {
+    position: absolute;
+    left: -16px;
+    border-radius: 16px 0 0 16px;
+    @include left-outer(4px, 6px);
+    transition: all.3s ease-in-out;
+    z-index: 10;
+
+    &:hover {
+        @include left-outer(2px, 3px);
+    }
+
+    &:active,
+    &.inactive {
+        @include rigth-inner(3px, 2px);
+    }
+    &::after {
+        content: ' ';
+        width: 2px;
+    }
+}
+
+
+.increment {
+    right: -16px;
+    border-radius: 0 16px 16px 0;
+    @include rigth-outer(4px, 6px);
+    transition: all.3s ease-in-out;
+
+    &:hover {
+        @include rigth-outer(2px, 3px);
+    }
+
+    &:active,
+    &.inactive {
+        @include left-inner(3px, 2px);
+    }
+
+    &::before {
+        content: ' ';
+        width: 2px;;
+    }
+}

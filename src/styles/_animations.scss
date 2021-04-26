@@ -1,0 +1,15 @@
+@import './variables';
+@import './base';
+
+@keyframes test {
+    0% {
+        // @include outer-shadow(0px, 0px);
+        box-shadow: none;
+    }
+    75%{
+        @include outer-shadow(6px, 8px);
+    } 
+    100% {
+        @include outer-shadow(4px, 6px);
+    }
+}

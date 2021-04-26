@@ -1,0 +1,20 @@
+$bg-color: #ecf0f3;
+$fg-color: #292d32;
+
+:root {
+    --bg-color: #ecf0f3;
+    --fg-color: #292d32;
+    --shadow-color: 0, 0, 0;
+    --shadow-strength: 0.3;
+    --light-color: 255, 255, 255;
+    --light-strength: 0.8;
+}
+
+.dark {
+    --bg-color: #292d32;
+    --fg-color: #ecf0f3;
+    --shadow-color: 0, 0, 0;
+    --shadow-strength: 0.5;
+    --light-color: 255, 255, 255;
+    --light-strength: 0.15;
+}

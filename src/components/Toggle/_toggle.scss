@@ -1,0 +1,54 @@
+@import '../../styles/variables';
+@import '../../styles/base';
+
+input[type=checkbox] {
+    &.toggle {
+        height: 0;
+        width: 0;
+        visibility: hidden;
+    }
+}
+
+.theme-switch {
+    transition: all 2s ease-in-out;
+}
+
+.toggle {
+    & + label {
+        cursor: pointer;
+        text-indent: -9999px;
+        width: 80px;
+        height: 40px;
+        @include color;
+        display: block;
+        border-radius: 100px;
+        position: relative;
+        @include outer-shadow(4px, 6px);
+        @include inner-shadow(2px, 4px);
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            width: 24px;
+            height: 24px;
+            background: yellow;
+            border-radius: 90%;
+            @include outer-shadow(2px, 4px);
+            transition: 0.3s;
+        }
+    }
+
+    &input:checked + label:after {
+        left: calc(100% - 8px);
+        background: #fff;
+        transform: translateX(-100%);
+    }
+}
+
+input:checked + label:after {
+    left: calc(100% - 8px);
+    background: #fff;
+    transform: translateX(-100%);
+}

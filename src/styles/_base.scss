@@ -1,0 +1,77 @@
+@import './_variables.scss';
+
+@mixin flex-row-center {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+@mixin flex-column-center {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@mixin flex-row-between {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+@mixin flex-column-between {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+@mixin color {
+    background-color: var(--bg-color);
+    color: var(--fg-color);
+}
+
+@mixin outer-shadow($coord, $blur) {
+	box-shadow: $coord $coord $blur rgba(var(--shadow-color), var(--shadow-strength)),
+		    (-$coord) (-$coord) $blur rgba(var(--light-color), var(--light-strength));
+}
+
+@mixin inner-shadow($coord, $blur) {
+	box-shadow: inset $coord $coord $blur rgba(var(--shadow-color), var(--shadow-strength)),
+		    inset (-$coord) (-$coord) $blur rgba(var(--light-color), var(--light-strength));
+}
+
+@mixin rigth-outer($coord, $blur) {
+    box-shadow: $coord 0 $blur rgba(var(--shadow-color), var(--shadow-strength)); 
+}
+
+@mixin left-outer($coord, $blur) {
+    box-shadow: (-$coord) 0 $blur rgba(var(--shadow-color), var(--shadow-strength)); 
+}
+
+@mixin rigth-inner($coord, $blur) {
+    box-shadow: inset $coord 0 $blur rgba(var(--light-color), var(--light-strength)); 
+}
+
+@mixin left-inner($coord, $blur) {
+    box-shadow: inset (-$coord) 0 $blur rgba(var(--light-color), var(--light-strength)); 
+}
+
+@mixin scroll-bar {
+    &::-webkit-scrollbar {
+        width:  8px;
+        height: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba($color: #000, $alpha: 0.2);
+        border-radius: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgba($color: #000, $alpha: 0.15);
+        border-radius: 0 8px 8px 0;
+    }
+}

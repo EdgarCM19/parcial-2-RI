@@ -1,0 +1,53 @@
+@import '../../styles/base';
+
+.btn {
+    //@include flex-row-center;
+    @include color;
+    @include outer-shadow(4px, 6px);
+    position: relative;
+    justify-content: space-around;
+    margin: 0 4px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 8px 16px;
+    text-align: center;
+    vertical-align: middle;
+    transition: all .3s ease-in-out;
+
+    & .btn-icon {
+        display: none;
+    }
+
+    &:hover {
+        @include outer-shadow(2px, 3px);
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:disabled,
+    &[disabled],
+    &:active {
+        @include inner-shadow(1px, 2px);
+    }
+    
+    &.expand {
+        
+        & .btn-icon {
+            display: inline-block;
+            position: absolute;
+            left: auto;
+            top: auto;
+        }
+
+        width: auto;
+        @include color;
+
+        & .btn-text {
+            margin-left: 24px;
+        }
+    }
+
+}

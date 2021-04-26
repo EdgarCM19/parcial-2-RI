@@ -1,0 +1,76 @@
+@import '../../styles/base';
+@import '../../styles/animations';
+
+.wrapper {
+  position: relative;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  margin: 8px;
+  @include color;
+  @include outer-shadow(3px, 6px);
+  min-width: 200px;
+  cursor: pointer;
+  animation: test .8s ease-in;
+
+  & .title {
+    @include flex-row-between;
+    font-size: 18px;
+
+    & .selected-option {
+      width: auto;
+      @include flex-row-center;
+    }
+
+    & svg {
+      width: 16px;
+      transition: .4s ease-in-out;
+
+      &.opened {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.sub-menu {
+  position: absolute;
+  left: -8px;
+  top: 100%;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  margin: 8px;
+  min-width: 200px;
+  max-height:200px;
+  overflow-y: auto;
+  z-index: 100;
+  @include color;
+  @include inner-shadow(2px, 3px);
+  @include scroll-bar;
+  animation: open .5s ease-in-out;
+}
+
+
+.menu-item {
+  border-radius: 8px;
+  padding: 2px 4px;
+  margin: 2px;
+  &:hover{
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+}
+
+
+@keyframes open {
+  0% {
+    opacity: 0;
+    top: -100%;
+    transform: scaleY(0.2);
+  }
+  100% {
+    opacity: 1;
+    top: 100%;
+    transform: scaleY(1);
+  }
+}
