@@ -22,7 +22,9 @@ html{
 .main {
     @include flex-column-center;
     @include color;
-    min-width: 100vw;
-    min-height: 100vh;
+    justify-content: flex-start;
+    width: 100vw;
+    height: 100vh;
     transition: .5s ease-in-out;
+    overflow: auto;
 }

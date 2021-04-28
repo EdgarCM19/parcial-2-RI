@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="card__wrapper">
-            <h3 class="card__title">{{title}}</h3>
+            <div class="card__title">{{title}}</div>
             <div class="card__separator"></div>
             <p class="card__content">{{content}}</p>
         </div>
@@ -15,12 +15,12 @@ export default defineComponent({
     props: {
         title: {
             type: String,
-            required: false,
+            required: true,
             default: 'Card Title'
         },
         content: {
             type: String,
-            required: false,
+            required: true,
             default: 'Card Content'
         },
     },

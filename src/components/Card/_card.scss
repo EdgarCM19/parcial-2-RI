@@ -19,18 +19,29 @@
         padding: 8px 4px;
         font-size: 26px;
         text-align: start;
+        font-weight: bold;
+        max-height: 4em;
+        overflow: hidden;
+        min-height: 4em;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
     }
 
     &__separator {
         width: 100%;
         height: 3px;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(102, 67, 67, 0.4);
     }
 
     &__content {
+        margin-top: 8px;
         width: 100%;
         padding: 8px 4px;
         font-size: 16px;
+        overflow-y: auto;
+        @include scroll-bar;
     }
 
 }

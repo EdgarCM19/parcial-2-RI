@@ -1,0 +1,54 @@
+@import '../../styles/base';
+
+.input-file-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.input-file-trigger {
+    display: block;
+    padding: 8px 16px;
+    margin: 16px;
+    @include color;
+    border-radius: 8px;
+    @include outer-shadow(4px, 6px);
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        @include outer-shadow(2px, 4px);
+    }
+}
+
+.input-file { 
+    position: absolute;
+    top: 0; left: 0;
+    width: 225px;
+    opacity: 0;
+    padding: 14px 0;
+    cursor: pointer;
+}
+
+.clickme {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+  
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+  
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
