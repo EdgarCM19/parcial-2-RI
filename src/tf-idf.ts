@@ -53,7 +53,13 @@ const getCorpus = (input: string): objNoticia[] => {
 }
 
 const preprocessDocument = (document: string): string => {
-    return removeStopWords(lexicalAnalysis(document), stop_words);
+    const textOrigin:string=document;
+    console.log('Texto antes de preprocesar');
+    console.log(document);
+    const textfinal:string=removeStopWords(lexicalAnalysis(document), stop_words);
+    console.log('Texto ya Preprocesado');
+    console.log(textfinal);
+    return textfinal;
 }
 
 const lexicalAnalysis = (document: string): string => {

@@ -73,6 +73,7 @@ export default defineComponent({
         const loadFile = (event: string) => { 
             const file_content = event;
             input_corpus.value = getCorpus(file_content);
+            getWords(input_corpus.value);
             const local_corpus_tf_idf = localStorage.getItem('corpus-tf-idf');
             corupus_tf_idf.value = (local_corpus_tf_idf === null) ?
                 get_tf_idf(input_corpus.value, getWords(input_corpus.value)):
