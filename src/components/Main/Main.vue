@@ -82,6 +82,8 @@ export default defineComponent({
         }
         
         const execQuery = () => {
+            query_tf_idf.value = [];
+            results.value = [];
             const query_words = preprocessDocument(query.value).split(' ').filter(x => !x.match(/\s+/g));
             console.log('Consulta: ', query_words);
             query_tf_idf.value = get_tf_idf(input_corpus.value, query_words);
