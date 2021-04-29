@@ -1,5 +1,5 @@
 {
-  "name": "parcial-2-ri",
+  "name": "departamental-2-ri",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "tslib": "2.2.0",
     "vue": "^3.0.0"
   },
   "devDependencies": {
@@ -25,5 +26,7 @@
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.2",
     "typescript": "~4.1.5"
-  }
+  },
+  "keywords": [],
+  "description": ""
 }
